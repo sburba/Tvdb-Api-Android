@@ -46,6 +46,7 @@ git clone git@github.com:sburba/Tvdb-Api-Android.git
 git submodule init
 git submodule update
 ```
+Create a local.properties file, following the example local.properties file
 
 If you're using Android Studio, import the project **make sure you use import from external model: Gradle**
 
