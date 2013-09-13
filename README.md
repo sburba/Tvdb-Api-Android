@@ -24,7 +24,7 @@ private Response.ErrorListener mErrorListener = new Response.ErrorListener() {
 };
 ```
 
-Then just call create the TvdbApi object and make your request:
+Then just create the TvdbApi object and make your request:
 
 ```java
 TvdbApi tvdbApi = new TvdbApi("<YOUR TVDB API KEY>", "en", mRequestQueue);
