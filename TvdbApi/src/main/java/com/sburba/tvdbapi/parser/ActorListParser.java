@@ -30,14 +30,14 @@ public class ActorListParser implements XmlObjectListParser<Actor> {
     @Override
     public Collection<Actor> parseListFromXmlStrings(Map<String, String> xmlStrings)
             throws XmlException {
-        return parseListFromXmlString(xmlStrings.get("en.xml"));
+        return parseListFromXmlString(xmlStrings.get("actors.xml"));
     }
 
     public Collection<Actor> readActorList(XmlPullParser parser)
             throws IOException, XmlPullParserException, XmlException {
 
         List<Actor> actorList = new ArrayList<Actor>();
-        parser.require(XmlPullParser.START_TAG, null, "Data");
+        parser.require(XmlPullParser.START_TAG, null, "Actors");
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) continue;
             if (parser.getName().equals("Actor")) {

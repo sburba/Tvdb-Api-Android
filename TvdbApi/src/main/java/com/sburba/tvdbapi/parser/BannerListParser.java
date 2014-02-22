@@ -47,14 +47,14 @@ public class BannerListParser implements XmlObjectListParser<Banner> {
     @Override
     public Collection<Banner> parseListFromXmlStrings(Map<String, String> xmlStrings)
             throws XmlException {
-        return parseListFromXmlString(xmlStrings.get("en.xml"));
+        return parseListFromXmlString(xmlStrings.get("banners.xml"));
     }
 
     public Collection<Banner> readBannerList(XmlPullParser parser)
             throws IOException, XmlPullParserException, XmlException {
 
         List<Banner> bannerList = new ArrayList<Banner>();
-        parser.require(XmlPullParser.START_TAG, null, "Data");
+        parser.require(XmlPullParser.START_TAG, null, "Banners");
         while (parser.next() != XmlPullParser.END_TAG) {
             if (parser.getEventType() != XmlPullParser.START_TAG) continue;
             if (parser.getName().equals("Banner")) {
