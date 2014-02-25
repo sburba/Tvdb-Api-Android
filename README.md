@@ -55,3 +55,5 @@ Edit com.sburba.tvdbapi.example.App and replace `<YOUR API KEY>` with your api k
 `./gradlew assembleDebug` or run using Android Studio
 
 If you're having problems building or adding to your project don't be afraid to contact me.
+
+Thanks to Github User [bigno](https://github.com/bigno) for helping me diagnose a few issues with banner and actor parsing!
