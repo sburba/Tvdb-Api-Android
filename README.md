@@ -1,7 +1,7 @@
 Tvdb-Api-Android
 ================
 
-Tvdb API that uses Volley for easy asynchronous API requests on Android.
+Tvdb API for easy asynchronous API requests on Android.
 
 ## Usage
 All TvdbApi calls are asynchronous, so you will need to create listeners to receive responses
