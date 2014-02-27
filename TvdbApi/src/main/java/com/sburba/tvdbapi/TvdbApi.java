@@ -65,7 +65,7 @@ public class TvdbApi {
             return;
         }
 
-        String requestUrl = SERIES_SEARCH + query;
+        String requestUrl = SERIES_SEARCH + query + "&language=" + mLanguage;
         XmlObjectListRequest<Series, SeriesParser> seriesRequest =
                 new XmlObjectListRequest<Series, SeriesParser>(new SeriesParser(),
                                                                requestUrl, listener,
