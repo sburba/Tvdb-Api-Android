@@ -7,8 +7,8 @@ def versionPatch = 0
 def versionBuild = 0
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.2"
+    compileSdkVersion 21
+    buildToolsVersion "22.0.0"
 
     defaultConfig {
         minSdkVersion 8
