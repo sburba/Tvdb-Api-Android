@@ -39,12 +39,10 @@ As it is set up, it will only build with gradle. Sorry, ant/eclipse users :(. If
 
 First, get an API key from [theTVDB.com](http://thetvdb.com)
 
-Then, clone the project and init the volley submodule
+Then, clone the project
 
 ```shell
 git clone git@github.com:sburba/Tvdb-Api-Android.git
-git submodule init
-git submodule update
 ```
 Create a local.properties file, following the example local.properties file
 
@@ -55,5 +53,25 @@ Edit com.sburba.tvdbapi.example.App and replace `<YOUR API KEY>` with your api k
 `./gradlew assembleDebug` or run using Android Studio
 
 If you're having problems building or adding to your project don't be afraid to contact me.
+
+## Including the Library in your project
+First clone the project
+
+```shell
+git clone git@github.com:sburba/Tvdb-Api-Android.git
+```
+
+Run ```./gradlew installArchives``` in the root of the cloned project
+
+In your project add mavenCentral() to your root build.gradle's list of repositories:
+
+        allprojects {
+            repositories {
+                jcenter()
+                mavenCentral()
+            }
+        }
+
+In your module add ```compile com.sburba:tvdbapi:1.0.0``` to the dependencies
 
 Thanks to Github User [bigno](https://github.com/bigno) for helping me diagnose a few issues with banner and actor parsing!

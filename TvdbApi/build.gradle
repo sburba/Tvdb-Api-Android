@@ -1,16 +1,10 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:0.7.+'
-    }
-}
-apply plugin: 'android-library'
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
 
-repositories {
-    mavenCentral()
-}
+def versionMajor = 1
+def versionMinor = 0
+def versionPatch = 0
+def versionBuild = 0
 
 android {
     compileSdkVersion 19
@@ -18,16 +12,24 @@ android {
 
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 19
+        targetSdkVersion 21
+        versionCode versionMajor * 10000 + versionMinor * 1000 + versionPatch * 100 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}"
     }
 
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.0.1'
-    compile project(':libraries:volley')
+    compile 'com.android.support:support-v4:21.0.3'
+    compile 'com.mcxiaoke.volley:library:1.0.11'
 }
 
-task jar(type: Jar) {
-    from android.sourceSets.main.java
+task installArchives(type: Upload) {
+    description "Installs the artifacts to the local Maven repository."
+    repositories.mavenInstaller {
+        configuration = configurations.default
+        pom.groupId = 'com.sburba'
+        pom.artifactId = 'tvdbapi'
+        pom.version = android.defaultConfig.versionName
+    }
 }
