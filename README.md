@@ -63,12 +63,12 @@ git clone git@github.com:sburba/Tvdb-Api-Android.git
 
 Run ```./gradlew installArchives``` in the root of the cloned project
 
-In your project add mavenCentral() to your root build.gradle's list of repositories:
+In your project add mavenLocal() to your root build.gradle's list of repositories:
 
         allprojects {
             repositories {
                 jcenter()
-                mavenCentral()
+                mavenLocal()
             }
         }
 
